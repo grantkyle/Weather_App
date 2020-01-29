@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+       <h1><strong>What in the Worldwide WEATHER?!</strong></h1>
+        <h3>Search for weather in your given travel destination</h3>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="city search">
+                <label for="name-input">Search by City</label>
+                <span id="error"></span>
+                <input class="form-control searchCity" type="text" placeholder="City Name">
+                <button class="submitCity btn btn-primary">Search</button>
+            </div>
+
+            <div class="recent-searches">
+                <h4>Recent Searches</h4>
+                <div class="showRecentCities"></div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="current-city">
+                <h3>Current City</h3>
+                <div class="showCurrentCity"></div>
+            </div>
+            <div class="five-day-forecast">
+                <h4>5 Day Forecast</h4>
+                <div class="showUpcomingDays"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script src="weather.js"></script>
+</body>
+
+</html>

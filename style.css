@@ -1,0 +1,22 @@
+header {
+    background: black;
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+.submitCity {
+    border-width: 1px;
+    border-color: darkgrey;
+    background-color: lightgrey;
+    margin: 10px
+}
+
+.cityInput {
+    padding: 5px;
+    margin: 5px;
+}
+
+
