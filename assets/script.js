@@ -60,7 +60,7 @@ $(document).ready(function () {
                 <ul>Right now, ${moment().format('MMMM Do YYYY, h:mm:ss a')}, in ${city[0]},
                 the temperature is ${response.main.temp} degrees.</ul>
                 <ul>The humidity is ${response.main.humidity}%. Wow!</ul>
-<ul>That WIND though! It is blowing at ${response.wind.speed}MPH.</ul>
+<ul>That WIND though! It is blowing your face off at ${response.wind.speed}MPH.</ul>
 <img src=http://openweathermap.org/img/w/${response.weather[0].icon}.png>
                 `)
 
