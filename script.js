@@ -4,7 +4,7 @@ $(document).ready(function () {
     let city = [];
     let index = 0;
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?" + apiKey + "&units=imperial&q=";
-    let forecastURL = "http://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + "Austin";
+    // let forecastURL = "http://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + "Anchorage";
     let uviURL = "http://api.openweathermap.org/data/2.5/uvi?" + apiKey;
 
     var fatherTime = moment() // add moment
@@ -31,6 +31,7 @@ $(document).ready(function () {
 
     $('.submitCity').click(function () {
         let searchCity = $(".searchCity").val();
+        let forecastURL = "http://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + searchCity;
         console.log(searchCity);
         //  displayWeather(searchCity); //
 
@@ -56,9 +57,9 @@ $(document).ready(function () {
 
                 $(".showCurrentCity").html(
                     `
-                <ul>Right now, ${moment()._d}, in ${city[0]},
+                <ul>Right now, ${moment().format('MMMM Do YYYY, h:mm:ss a')}, in ${city[0]},
                 the temperature is ${response.main.temp} degrees.</ul>
-                <ul>The humidity is ${response.main.humidity} humidities per humidity. Wow!</ul>
+                <ul>The humidity is ${response.main.humidity}%. Wow!</ul>
 <ul>That WIND though! It is blowing at ${response.wind.speed}MPH.</ul>
 <img src=http://openweathermap.org/img/w/${response.weather[0].icon}.png>
                 `)
@@ -79,15 +80,18 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response3) {
             var forecasts = response3.list
-            for (let i = 1; i < forecasts.length && i < 6; i++) {
-                $(".showUpcomingDays").append(`<div class='col weather-future' data-id=${i}>Temperature: ${Math.round(forecasts[i].main.temp)}</div>
-            <img src=${`http://openweathermap.org/img/w/${forecasts[i].weather[0].icon}.png`}></img>
+            const i = [4, 12, 20, 28, 36]
+            for (x of i) {
+                $(".showUpcomingDays").append(`<div class='col weather-future' data-id=${x}> ${forecasts[x].dt_txt}  <li>Temperature: ${Math.round(forecasts[x].main.temp)} <li>Humidity: ${forecasts[x].main.humidity}</li></div>
+            <img src=${`http://openweathermap.org/img/w/${forecasts[x].weather[0].icon}.png`}></img>
             `)
+                console.log(forecasts);
             }
         })
         $('.showUpcomingDays').empty();
         var colOne = $("<div class='col-sm-2'>")
         var rowOne = $("<div class='row'>")
+
     })
 });
 
