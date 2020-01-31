@@ -4,7 +4,6 @@ $(document).ready(function () {
     let city = [];
     let index = 0;
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?" + apiKey + "&units=imperial&q=";
-    // let forecastURL = "http://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + "Anchorage";
     let uviURL = "http://api.openweathermap.org/data/2.5/uvi?" + apiKey;
 
     var fatherTime = moment() // add moment
@@ -38,7 +37,7 @@ $(document).ready(function () {
         if (searchCity != '') {
             city = JSON.parse(localStorage.getItem("city"));
 
-            city.unshift(searchCity);
+           // city.unshift(searchCity);
 
             while (city.length > 5) {
                 city.pop() // "pops" the oldest search after 5 searches
