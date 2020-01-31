@@ -35,7 +35,11 @@ $(document).ready(function () {
         //  displayWeather(searchCity); //
 
         if (searchCity != '') {
-            city = JSON.parse(localStorage.getItem("city"));
+            city = JSON.parse(localStorage.getItem("city")) || [];
+
+            // if(!city) {
+            //     city = [];
+            // }
 
             city.unshift(searchCity);
 
