@@ -4,7 +4,7 @@ $(document).ready(function () {
     let city = [];
     let index = 0;
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?" + apiKey + "&units=imperial&q=";
-    let uviURL = "http://api.openweathermap.org/data/2.5/uvi?" + apiKey;
+    let uviURL = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey;
 
     var fatherTime = moment() // add moment
     console.log(fatherTime);
