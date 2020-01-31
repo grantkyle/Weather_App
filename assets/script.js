@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('.submitCity').click(function () {
         let searchCity = $(".searchCity").val();
-        let forecastURL = "http://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + searchCity;
+        let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?" + apiKey + "&units=imperial&q=" + searchCity;
         console.log(searchCity);
         //  displayWeather(searchCity); //
 
