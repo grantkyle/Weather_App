@@ -37,7 +37,7 @@ $(document).ready(function () {
         if (searchCity != '') {
             city = JSON.parse(localStorage.getItem("city"));
 
-           // city.unshift(searchCity);
+            city.unshift(searchCity);
 
             while (city.length > 5) {
                 city.pop() // "pops" the oldest search after 5 searches
